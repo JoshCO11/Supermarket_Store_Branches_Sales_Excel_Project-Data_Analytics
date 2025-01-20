@@ -58,7 +58,25 @@ What I did in this question is that I've created a simple table with 3 columns a
 
 Here is the image of the table:
 
-![Performance Analysis #1](Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/images/Question 1.jpg)
+<p align="center">
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/6beb6ac7bd9ae7e79f775bb9aa045833bcb8199c/images/Question%201/Performance_Analysis_1.PNG" alt=" Performance Analysis #1" width="800"
+</p>
+
+What I did here is that I searched for the highest and lowest sales first and put it the rows aligned to *Sales* column.<br>
+The formula that I've used are the following:<br>
+For the highest sales:
+```
+=MAX(Table1[Store_Sales])
+```
+For the lowest sales:
+```
+=MIN(Table1[Store_Sales])
+```
+Finding the average store sales is not included in the questions but its better to know it too. I've used median formula here instead of average to avoid outliers.
+```
+=MEDIAN(Table1[Store_Sales])
+```
+
 
 
 
