@@ -106,7 +106,7 @@ To further understand the relationship here is the regression analysis:
   <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/e20ff4e5ee8b5f0bfde5dc41fa409b6bf68c2d17/images/Question%202/Customer_Behavior_Corr1.1.PNG" alt=" Customer Behavior #1.1" width="800"
 </p>
 
-What's important to understand in this confusing set of numbers is the Multiple R, R Square, Significance F, Coefficients, and P-value.
+What's important to understand in this confusing set of numbers is the Multiple R, R Square, Significance F, Coefficients, and P-value. You can access this using Data Analysis Toolpak in Excel. 
 
 - **Multiple R** is just the same as the =CORR formula in Excel.
 - **R Sqaure** is the proportion of the variance in the dependent variable that is predictable from the independent variables, also known as the coefficient of determination.
@@ -118,12 +118,12 @@ What's important to understand in this confusing set of numbers is the Multiple 
 
 Well as you can see in this image the Multiple R is low that conveys low relationship between the two. The Significance F is about *.80* meaning it is not working well. Then for P-value the intercept value is less than 0.05 which means it is good while the variable is much higher also almost *.80* indicating no relationship, proving the null hypothesis.
 
-Some people understand it more when it is presented visually so here is the scatter plot:
+Some people understand it more when it is presented visually, so here is the scatter plot:
 <p align="center">
   <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/e20ff4e5ee8b5f0bfde5dc41fa409b6bf68c2d17/images/Question%202/Customer_Behavior_Corr1.PNG" alt=" Customer Behavior #1" width="800"
 </p>
 
-The almost flat trendline means there is no correlation between the Daily Customer Count and Store Sales. Probably that is because the people going in-and-out the store doesn't buy and only goes for window shopping. Also maybe the store is themed like for seasonal events, like christmas season, halloween, etc. where people doesn't neccesarily buy and use in normal days.
+The almost flat trendline means there is no correlation between the Daily Customer Count and Store Sales. Probably that is because the people going in-and-out the store doesn't buy and only goes for window shopping. Also maybe the store is probably themed like store that is for seasonal events, like christmas season, halloween, etc. where people doesn't neccesarily buy items that can be used in normal days.
 
 Now let's take a look more analysis by answer the second question: *How does the number of items available affect the daily customer count or store sales?*
 
@@ -146,7 +146,7 @@ Here is the scatter plot visualization:
   <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/51193e1245b3cf39635aadf47e77a16a49f720a7/images/Question%202/Customer_Behavior_Corr_Problem2.1.PNG" alt=" Customer Behavior #2" width="800"
 </p>
 
-The low correlation relationship between the number of items available and daily customer count is not correlated because of the possibility of poor desicion making into ordering stocks of items which is not really selling that store location. That is because probably the customer is looking for something specific that cannot be found in that store. Another example also of seasonal stores which are not visited often when its not holiday. 
+The low correlation relationship between the number of items available and daily customer count is not correlated because of the possibility of poor desicion making of the store owner into ordering stocks of items which is not really selling in that store location. That is because probably the customer is looking for something specific that cannot be found in that store. Another example also of seasonal stores which are not visited often when its not holiday. 
 
 Here is for the correlation between the number of items and store sales.<br>
 Correlation using the formula:
@@ -165,11 +165,16 @@ Here is the visual of scatter plot between number of items available and store s
   <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/51193e1245b3cf39635aadf47e77a16a49f720a7/images/Question%202/Customer_Behavior_Corr_Problem2.2.PNG" alt=" Customer Behavior #2.2" width="800"
 </p>
 
-The visualization show a trendline that is looks like there is somewhat a upward slope but very little, that is because of the positive significance f, which indicates good model. However its also almost flat indicating low to no correlation between the two features. 
+The visualization show a trendline that looks like there is somewhat a upward slope but very little, that is because of the positive significance f, which indicates good model. However, its also almost flat indicating low to no correlation between the two features. 
 
-Does that mean the store is having poor performance? The answer is no, that is because maybe the store is not related to people. Just like what I've mentioned earlier, probably the store is dedicated for seasonal events, and people don't often buy products in that store if its only regular days. Another reason is the difference between of demand and supply. The people might not buy items because of the quality of the product and miss decision of restocking tons of items instead of focusing to quality can result to this low correlation. Suggesting to avoid overstocking.
+Does that mean the store is having poor performance because the items available is not showing high correlation to sales? The answer is no, that is because maybe the store is not relevant to people. Just like what I've mentioned earlier, probably the store is dedicated for seasonal events, and people don't often buy products in that store if its regular days. Another reason is the difference between of demand and supply. The people might not buy items because of the quality of the product, indicating there could be also wrong decision making of restocking tons of items instead of focusing to quality can result to this low correlation. Suggesting to avoid overstocking and monitor the store's selling products to avoid cost waste. 
 
 
+Now we're done with second set of questions, let's go with the third set of questions.
+
+### **SOLVING THE *STORE CHARACTERISTICS* QUESTIONS**
+
+The first question is *Does store area influence the daily customer count or store sales?*
 
 
 
