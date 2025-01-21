@@ -302,7 +302,7 @@ There is only one question in this set, that is: *Can stores be grouped into hig
 
 I've assessed both the grouping on store sales and daily customer count. Here are the basic description of both store sales and daily customer count:
 <p align="center">
-  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/f3d8f2fe76077698edfdfc167746a2b0fa540613/images/Question%205/Segmentation_1.PNG)" alt="Segmentation 1" width="800"
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/c0404f97d8c15dfb2c20514c7bd1870b88deff4f/images/Question%205/Segmentation_1.PNG" alt="Segmentation 1" width="800"
 </p>
 
 I've used this basic description to create two new column to my dataset page. The two columns are *Sales Performance Category* and *Customer Count Performance Category*. In this two new column I've used an Excel formula *=IFS* to distinguish whatever store category its fall to. The average category is the median, low-performaning is the stores less than 25th percentile, and high-performing is the stores greater than 75th percentile.
