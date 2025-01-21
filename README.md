@@ -289,7 +289,7 @@ Well, just like the relationship of large store area with daily customer count, 
 
 Here is the chart for that:
 <p align="center">
-  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/8ab35e59bd5a426011a24eed0d5abe8605b36483/images/Question%204/Trends_and_Patterns_1.5.PNG" alt="Trends and Patterns 1.5" width="800"
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/38861ed45fc891237a9c287ea9462fd3a2eb2107/images/Question%204/Trends_and_Patterns_1.5.PNG" alt="Trends and Patterns 1.5" width="800"
 </p>
 
 Just like the chart for store area and store sales, it's showing a rise at the top at the start of the smallest store area until it reaches the size of *1,415 - 1,454* size. Then it's seen to be on decline. What's the reason behind the larger traction of daily customer traffic than the larger store area. Well, that is probably because the smaller or at medium size store are is selling products that is highly in-demand in its location. The proximity of accessability to the store is greater than the larger store area. That is one of example why the smaller or medium size store area is gaining more customer traffic. Another reason is that, probably the store is selling products in much more affordable prices. This is a stragety where you will also sell a lot but only gain a little of profit, but the sale factor will be high because it is affordable in smaller change. If that's the case the customer traffic will be high because not all customers are rich to purchase items that is not in the capacity of their budget. And about the correlation status of the less than large store area and daily customer count is at negative also, showing that whenever the other variable goes to increase the other one is decreasing, that is probably why when it reached the peak of *1,415 - 1,454* size, it decreases. 
@@ -297,6 +297,124 @@ Just like the chart for store area and store sales, it's showing a rise at the t
 That is all for the set of fourth set of question about the trends and patterns. Let's now go to segmentation.
 
 ### **SOLVING THE *SEGMENTATION* QUESTIONS**
+
+There is only one question in this set, that is: *Can stores be grouped into high-performing, average, and low-performing categories based on sales or customer count?*
+
+I've assessed both the grouping on store sales and daily customer count. Here are the basic description of both store sales and daily customer count:
+<p align="center">
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/f3d8f2fe76077698edfdfc167746a2b0fa540613/images/Question%205/Segmentation_1.PNG)" alt="Segmentation 1" width="800"
+</p>
+
+I've used this basic description to create two new column to my dataset page. The two columns are *Sales Performance Category* and *Customer Count Performance Category*. In this two new column I've used an Excel formula *=IFS* to distinguish whatever store category its fall to. The average category is the median, low-performaning is the stores less than 25th percentile, and high-performing is the stores greater than 75th percentile.
+
+The exact formula is here.<br>
+This is for the store sales category:
+```
+=IFS([@[Store_Sales]] < Segmentation!$C$4, "Low -performing", AND([@[Store_Sales]] >= Segmentation!$C$4, [@[Store_Sales]] <= Segmentation!$C$6), "Average", [@[Store_Sales]] > Segmentation!$C$6, "High-performing")
+```
+
+This is for the daily customer count category:
+```
+=IFS([@[Daily_Customer_Count]] < Segmentation!$F$4, "Low -performing", AND([@[Daily_Customer_Count]] >= Segmentation!$F$4, [@[Daily_Customer_Count]] <= Segmentation!$F$6), "Average", [@[Daily_Customer_Count]] > Segmentation!$F$6, "High-performing")
+```
+After that I've created a pie chart and column chart to visualize the category for both store sales and daily customer count.
+
+This plots is for Store Sales category:
+<p align="center">
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/f3d8f2fe76077698edfdfc167746a2b0fa540613/images/Question%205/Segmentation_2.PNG" alt="Segmentation 2" width="800"
+</p>
+
+As you can see there is more average store sales than both low-performing and high-performing stores. This shows that in our dataset, it is more on about average stores.
+
+
+This plot is for Daily Customer Count category:
+<p align="center">
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/f3d8f2fe76077698edfdfc167746a2b0fa540613/images/Question%205/Segmentation_3.PNG" alt="Segmentation 3" width="800"
+</p>
+
+For the daily customer count, the average is still the highest at *459* stores, while the high-performing is at *217* and for low-performing is at *220*. Indicating that, when it comes to daily customer count in our dataset, it is more on about the average range of values.
+
+
+Now, we've finished the fifth set of questions. We will now move to the final question, which is *"Optimization"*.
+
+### **SOLVING THE *OPTIMIZATION* QUESTIONS**
+
+The first question is: *What store characteristics (e.g., size, items available) maximize sales or customer count?*
+
+In this question I've created a correlation table where it shows the correlation of each feature to each other. Here is the table:
+
+<p align="center">
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/ed48dfc4dbe19fe649323bc0bb12f381de3da459/images/Question%206/Optimization_1.PNG" alt="Optimization 1" width="800"
+</p>
+
+As you can see there is no correlation that is high other than the equal feature or the same feature, and the feature of *Area * Items* which I have created just to check if it will put affect to the store sales, but as you can see it only has *0.102* correlation with store sales, which is pretty low. Why is this the result? The possible reason is that, the dataset doesn't include more important features. Remember this dataset is from kaggle, so this dataset is probably missing some columns but still, this dataset has a 700+ upvotes, so it's still a good dataset for project.
+
+Now let's proceed to the last and second question in this final set of question: *Could specific changes (e.g., increasing store area or inventory) improve performance for underperforming stores?*
+
+In this part what I did is I've added numerous new columns to my dataset to simulate an increase to the store area, items available, and daily customer count. They are increased by 50% and 100%. The formula I've used is this. By the way, the dataset I've used here are the only low-performing stores, and we've already covered that in the previous set of questions, so I've used it. 
+
+For 50% raise:
+```
+=Column_Feature * 1.5
+```
+
+For 100% raise:
+```
+=Column_Feature * 2
+```
+
+After that I've used multiple regression analysis to finally simulate the increase to the store sales. Here is the result of the multiple regression analysis:
+
+<p align="center">
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/ed48dfc4dbe19fe649323bc0bb12f381de3da459/images/Question%206/Optimization_2.PNG" alt="Optimization 2" width="800"
+</p>
+
+I've disregard other values in the multiple regression analysis because the only thing I will use is this one, the values you can see in the image. 
+
+After that I've created another set of new columns to present the store sales of the increased variables. The formula I used is this:
+```
+=Intercept + (Coefficient_1 * Variable_1) + (Coefficient_2 * Variable_2) + (Coefficient_3 * Increased_Variable_3)
+```
+
+This formula depends on what I'm simulating, for this example, let's say I'm increasing the *variable 3* that is why I've used the increased variable instead the original. The rest will be the original when you only want to check the simulated increase of that one variable.
+
+After doing this in each new columns, I've created a table and also bar chart to understand if something really significant happens whenever there are changes with the present features in the dataset. Whether will it really increase the store sales or not. 
+
+This is the table:
+<p align="center">
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/ed48dfc4dbe19fe649323bc0bb12f381de3da459/images/Question%206/Optimization_2.1.PNG" alt="Optimization 2.1" width="800"
+</p>
+
+In this table you will see the changes, and I made it easier to understand because of the column of percentage changes. The only thing that increased here is the correlation between the store area and store sales. The rest is at negative. What is the meaning of that? before we answer that question, here are the bar charts:
+
+<p align="center">
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/ed48dfc4dbe19fe649323bc0bb12f381de3da459/images/Question%206/Optimization_2.2.PNG" alt="Optimization 2.2" width="800"
+</p>
+
+Well, as you can see here there was a huge leap of store sales when the store area increased in the underperforming stores. This might probably because of enhanced/better storage capacity, making the stocks more and when people comes they are able to give what the customers are looking. Another reason is better display of products inside the store. They might also had an edge to their competitors because they've had an upgrade of store size, gaining attraction the customers around their area. This means that whenever the underperforming stores decided to increase their store size about *50% or 100%*5, the store sales will increase in significant in about *41% or 81%*.
+
+<p align="center">
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/ed48dfc4dbe19fe649323bc0bb12f381de3da459/images/Question%206/Optimization_2.3.PNG" alt="Optimization 2.3" width="800"
+</p>
+
+When it comes to the simulation of increasing the items available, there is a huge decrease to the total sales. The store sales decreases by *39% or 79%*, when you increase the items avaialable by *50% or 100%*. This is probably because the items added only costed the store and did not get the return of costs. This is probably because of poor decision making of restocking items that is not selling good in their location. Another reason is the location, the area probably not crowded with people.
+
+<p align="center">
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/ed48dfc4dbe19fe649323bc0bb12f381de3da459/images/Question%206/Optimization_2.4.PNG" alt="Optimization 2.4" width="800"
+</p>
+
+Lastly is when the simulated increase of daily customer count. This simulation also had a decrease to the total sales. When the daily customer count increased by *50%* the change of total sales dropped by *1%*. Then when the daily customer count increased by *100%* the total sales dropped by *2%*, so what is the meaning of this? This is probably the customers just stopped over the store, so even they count as addition to the daily count customer, the sales doesn't increased because the customers did not buy anything. They just did some window shopping or used the store as waiting location to someone. Another reason is that, people may tend to go inside the store to buy something not that significant to the overall total revenue of the store. For example buying a penny priced item, will not contribute a lot to the total sales. Another reason is the poor marketing strategy of the store. The customer service is probably also poor. The display of product is also probably poor, giving the customers hard time to buy whenever tons of customers come daily. 
+
+
+That is the last set of answers to my analysis project.<br>
+
+What I've learned from the analysis? I can say that the independent variables of the dataset does not affect the store sales (dependent variable) in a lot of ways. Maybe other aspects affect it more and it's not included in the dataset that was presented. But other than that, I can say that there is chance for underperforming stores to gain more sales. That is by increasing their store area. Investing to the quality of the store will get them more earnings than improving their marketing strategy to attract more traction of customers in daily basis. Also to avoid the overstocking of items. The owner should always check and be aware to the demand-supply situation of his or her store. Aiming to restock more items that is relevant to the store instead of ordering unnecessary items. 
+
+
+### **CONCLUSION ABOUT THE PROJECT**  
+
+This is my first project about data analysis using Excel. The skills I've showcased is just a the surface level of what a real data analyst can do. But this will serve as my stepping stone to improve my analysis in the future. I would to hear your reactions and comments to my analysis, either bad or good will help a lot to my progress. I'm planning to upload more projects here about datas using SQL, Python, Excel, Power BI, and other data related tools. 
+
 
 
 
