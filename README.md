@@ -236,7 +236,67 @@ So those are the analysis answer for the third set of questions. Let's now move 
 
 ### **SOLVING THE *TRENDS AND PATTERNS* QUESTIONS**
 
+The only question in this is: *Are larger stores consistently associated with higher sales or customer traffic?*
 
+In this part I've first checked first if there is any outlier in the Store Area. That is why I've gathered the basic description of the Store Area. 
+
+<p align="center">
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/53412f6283ecdd8f25e5d229f8514ef22cc9c48c/images/Question%204/Trends_and_Patterns_1.PNG" alt="Trends and Patterns 1" width="800"
+</p>
+
+I can see in here that the average is slightly higher than median by a very small margin. It's likely that's the distribution of store area is slightly right-skewed. I also created a visualization to understand it more easily. 
+
+<p align="center">
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/53412f6283ecdd8f25e5d229f8514ef22cc9c48c/images/Question%204/Trends_and_Patterns_1.1.PNG" alt="Trends and Patterns 1.1" width="800"
+</p>
+
+Just like what I have mentioned earlier the difference between the average and the median is very small, because of that the visualization of the chart is not showcasing right-skewed, its like a perfect bell shape size. This chart made me continue my analysis without further cleaning and removing outliers in my dataset.<br><br>
+I now proceeded to answer the question if there is an associated relationship between the larger stores and higher sales. To answer this question, I need to set a threshold where the larger store distinction will start. For that I've used *1 Standard Deviation above the Mean* <br><br>
+The formula to achieve this is:
+```
+=median + standard deviation
+```
+I was able to do this because I have displayed the store area description, where I was able to check all the nessecesary information about the store area.
+
+Then after that, knowing the threshold for the larger store, I began discretize the store area that is greater than or equal to the threshold. Here is the result:
+
+<p align="center">
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/8ab35e59bd5a426011a24eed0d5abe8605b36483/images/Question%204/Trends_and_Patterns_L_SA_bin.PNG" alt="Trends and Patterns Large Store Area bin" width="800"
+</p>
+
+With that I was able to create this plot showing if whenever the larger stores helps with the store sales.
+
+<p align="center">
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/8ab35e59bd5a426011a24eed0d5abe8605b36483/images/Question%204/Trends_and_Patterns_1.2.PNG" alt="Trends and Patterns 1.2" width="800"
+</p>
+
+As you can see in this visualization the larger the store become, the lesser it gets with total sales. That is because the larger stores are not effectively displaying their product for selling to the customer. There is also a chance that probably the store is not in a good area for their target customers. Maybe there marketing strategy is not good enough, that doesn't convince people to buy. But it's good to know that large store area doesn't necessarily means high profit. What about the stores that has a store area less than the threshold?
+
+Here is the plot of that:
+<p align="center">
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/8ab35e59bd5a426011a24eed0d5abe8605b36483/images/Question%204/Trends_and_Patterns_1.3.PNG" alt="Trends and Patterns 1.3" width="800"
+</p>
+
+This is not part of the question, in finding the less than the large store area. However, I've included it for better understanding, to find an answer if size of store area is really relevant. Well, according to the image, it took a rising action from the smallest size until it reaches the size of around *1,455 - 1,494*, indicating that this size is accumulating good amount of sales, much higher than the most of larger store area. Also, as you can see, other small store area is earning much higher than the larger store area. What could be the reason behind this? The possible reason behind this is an effective way of selling product to the mass. The store owner probably aware of what products are in-demand in his or her area. Providing those items for sale to the mass of customers. Another reason is the right location for their specific service. For example, a scuba-diving or beach store located in a beach, would sell a lot because that is the right store the person would go to whenever he is around the beach area. That is probably why it's generating a much higher value of total sales than a larger store area.
+
+I've also analyzed the association between the larger store area and daily customer count. To also to that I've used the discretized bin for larger store area. Then I've plotted the chart to visualize it.
+
+<p align="center">
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/8ab35e59bd5a426011a24eed0d5abe8605b36483/images/Question%204/Trends_and_Patterns_1.4.PNG" alt="Trends and Patterns 1.4" width="800"
+</p>
+
+Well, just like the relationship of large store area with daily customer count, it's showing a decline whenever the store reach a larger store area. The reason is probably because of the store is selling products that is expensive and not aiming for the mass of customers. The store is probably set for a specific demographics which does not scope the regular citizen around his location. That is an examples of why it is gaining less traction with daily customer traffic. The correlation also shows a negative value, indicating a decrease whenever one variable increases, mirroring the comment I have stated. How about the less than the larget store area threshold?
+
+Here is the chart for that:
+<p align="center">
+  <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/8ab35e59bd5a426011a24eed0d5abe8605b36483/images/Question%204/Trends_and_Patterns_1.5.PNG" alt="Trends and Patterns 1.5" width="800"
+</p>
+
+Just like the chart for store area and store sales, it's showing a rise at the top at the start of the smallest store area until it reaches the size of *1,415 - 1,454* size. Then it's seen to be on decline. What's the reason behind the larger traction of daily customer traffic than the larger store area. Well, that is probably because the smaller or at medium size store are is selling products that is highly in-demand in its location. The proximity of accessability to the store is greater than the larger store area. That is one of example why the smaller or medium size store area is gaining more customer traffic. Another reason is that, probably the store is selling products in much more affordable prices. This is a stragety where you will also sell a lot but only gain a little of profit, but the sale factor will be high because it is affordable in smaller change. If that's the case the customer traffic will be high because not all customers are rich to purchase items that is not in the capacity of their budget. And about the correlation status of the less than large store area and daily customer count is at negative also, showing that whenever the other variable goes to increase the other one is decreasing, that is probably why when it reached the peak of *1,415 - 1,454* size, it decreases. 
+
+That is all for the set of fourth set of question about the trends and patterns. Let's now go to segmentation.
+
+### **SOLVING THE *SEGMENTATION* QUESTIONS**
 
 
 
