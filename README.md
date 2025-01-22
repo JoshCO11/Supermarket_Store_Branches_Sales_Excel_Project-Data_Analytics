@@ -37,7 +37,7 @@ Here are the generated questions:
 >    underperforming stores?
 
 ### **DATASET INFORMATION** 
-First of all my dataset has a columns:<br>
+Let's first examine the columns in my dataset:<br>
 #### **Dataset Columns**  
 - **Store ID**: This serves as identification of the stores.  
 - **Store_Area**: Physical area of the store in square yards.  
@@ -51,7 +51,7 @@ The dataset also has a total number of 897 rows.
 ### **SOLVING THE *PERFORMANCE ANALYSIS* QUESTIONS**
 The first question is: *Which store generates the highest and lowest sales?*<br>
 The second question is: *What is the average store sales across all stores?*<br>
-What I did in this question is that I've created a simple table with 3 columns and 3 rows.<br>
+For this *Performance Analysis* questions, I made a table with three columns and rows.<br>
 - Column 1 is Metric (Highest Sales, Lowest Sales, Average Store Sales)<br>
 - Column 2 is Store ID (To identify which store holds the highest or lowest sales.)
 - Column 3 is Sales (Putting the amount of revenue collected by that store.)
@@ -62,8 +62,8 @@ Here is the image of the table:
   <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/7d6883e0c3e667e5b2a11284fd37ea8895735365/images/Question%201/Performance_Analysis_1.PNG" alt=" Performance Analysis #1" width="800"
 </p>
 
-What I did here is that I searched for the highest and lowest sales first and put it the rows aligned to *Sales* column.<br>
-The formula that I've used are the following:<br>
+What I did here was search for the highest and lowest sales first and align them in the rows under the *Sales* column.<br>
+The formulas that I used are the following:<br>
 For the highest sales:
 ```
 =MAX(Table1[Store_Sales])
@@ -72,23 +72,23 @@ For the lowest sales:
 ```
 =MIN(Table1[Store_Sales])
 ```
-In finding the average store sales I've used median formula here instead of average to avoid outliers.
+In finding the average store sales, I used the median formula instead of average to avoid the impact of outliers.
 ```
 =MEDIAN(Table1[Store_Sales])
 ```
 
-After finding the sales, I now started looking for Store ID. The formula that I've used is the following:<br>
-This formula is for finding the Store ID of the highest sales:
+After identifying the sales, I now started looking for the Store ID. The formula that I used is as following:<br>
+This formula is to find the Store ID with the highest sales:
 ```
 =INDEX(Table1[[Store ID ]], MATCH(MAX(Table1[Store_Sales]), Table1[Store_Sales], 0))
 ```
-This formula is for finding the Store ID of the lowest sales:
+This formula is to find the Store ID with the lowest sales:
 ```
 =INDEX(Table1[[Store ID ]], MATCH(MIN(Table1[Store_Sales]), Table1[Store_Sales], 0))
 ```
 
-That is how I've answered the questions in *Performance Analysis*.<br>
-Let's go now into the second set of questions. 
+That is how I answered the questions in ***Performance Analysis***.<br>
+Let's now move into the second set of questions. 
 
 
 ### **SOLVING THE *CUSTOMER BEHAVIOR* QUESTIONS**
