@@ -412,6 +412,7 @@ That is the last answer to my analysis project.<br>
 
 
 ### **CONCLUSION ABOUT THE PROJECT**  
+
 What I've learned from the analysis? From this analysis, I can conclude that the independent variables of the dataset does not affect the store sales (dependent variable) in a lot of ways. Maybe other aspects may affect it more which are not included in this dataset. However, there is potential for underperforming stores to increase their sales, particularly by focusing on improving their store area. Investing in the quality of the store, such as increasing its size, can lead to more earnings than simply focusing on attracting more customers through marketing. Moreover, it’s crucial for store owners to avoid overstocking. The owner should regularly assess and be aware of his or her store's demand-supply situation and ensure that they are restocking items relevant to the store’s needs, rather than ordering unnecessary products.
 
 This is my first project on data analysis using Excel. The skills I've showcased is just a the surface level of what a real data analyst can do, but this will serve as a stepping stone to improve my analytical skills in the future. I would appreciate hearing your reactions and comments on my analysis—whether positive or constructive criticism, both will help me progress. I also plan to upload more projects here related to data using SQL, Python, Excel, Power BI, and other data-related tools.
