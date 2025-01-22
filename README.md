@@ -175,23 +175,23 @@ Now that we've addressed the second set of questions, let's move on to the third
 
 The first question is: ***Does store area influence the daily customer count or store sales?***
 
-On what I did here is that I also answered it by using the *=CORR* formula in Excel and then I've created a scatter plot with trendline to be able to understand it more visually.
+What I did here was I also answered it by using the *=CORR* formula in Excel and then I created a scatter plot with a trendline to be able to better understand the relationship visually.
 
 I analyzed Store Area and Daily Customer Count relationship:
 ```
 =CORREL(Table1[Store_Area],Table1[Daily_Customer_Count])
 ```
-The result is *-0.04* meaning there is a negative correlation. This is not a good result because it means one variable increases while the other variable decreases. You can visualize it more with this image.
+The result is ***-0.04*** indicating a negative correlation. This is not a favorable outcome because it means that as one variable increases, the other variable decreases. You can visualize this more clearly in the image below.
 
 <p align="center">
   <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/c6f84fe64d3687e855e02d23de6e0b21bd193f04/images/Question%203/Store_Characteristics_1.PNG" alt="Store Characteristics #1" width="800"
 </p>
 
-In this visualization we can see that when the Store Area increases the Daily Customer Count decreases. I can tell it that way because the slope is downward. It's decreasing greatly but still you can say that they are not greatly correlated and has no good relationship with each other. There could be different reasons why this is happening. 
+In this visualization, we can see that as the Store Area increases, the Daily Customer Count decreases. This is evident from the downward slope. While the decline is noticeable, it still suggests that they are not strongly correlated and do not have a strong relationship with each other. There could be several reasons for this. 
 
-First reason could be, the store is mainly not encouraging normal day-to-day customers. The items for sale might be too expensive for normal customers, hence, the reason of the store being large. Another reason could be, the store has only few items inside, this is also related to my first reason because probably the items are only specified for specific demographics. Indicating mismatching of target customers in the location area.
+First reason might be that the store doesn't attract regular, day-to-day customers. The items for sale could be too expensive for everyday shoppers, which might explain why the store is large. Another reason could be, the store has a limited selection of items. This ties back to the first reason, as probably the items are targeted at a specific demographics. Leading to mismatching of target customers in the location area.
 
-Let's now analyze correlation between Store Area and Store Sales. I also did the same process in here with the formula:
+Now, let's analyze the correlation between Store Area and Store Sales. I followed the same process here using the formula
 ```
 =CORREL(Table1[Store_Area],Table1[Store_Sales])
 ```
@@ -201,35 +201,35 @@ It's also low but this time it's not negative. Let's check the scatter plot.
   <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/c6f84fe64d3687e855e02d23de6e0b21bd193f04/images/Question%203/Store_Characteristics_1.1.PNG" alt="Store Characteristics #1.1" width="800"
 </p>
 
-The slope here is not in downward motion, its somewhat increased, showing an upward motion. As you can see most of the stores are around 1,200 to 1,800 size and the store sales is about $40,000 and $80,000. But to answer the question does store area influence store sales? The answer is somewhat yes. This is probably, larger stores are offering more expensive items. These expensive items could be branded items that you cannot find in local stores. Another reason is that larger stores offer more than selling products. Larger stores can offer satisfaction like playground for kids or other areas that could make the customer relaxed. Another reason could be the style of marketing of products in that store. Hooking more customers to buy instead of just going in-and-out of the store. 
+The slope here is not downward; it's actually upward, indicating a positive relationship. As you can see, most of the stores around ***1,200 to 1,800*** size and with the store sales about ***$40,000 and $80,000***. To answer the question, does store area influence store sales? The answer is somewhat yes. This is probably, larger stores are offering more expensive items. These expensive items could be branded items that you cannot find in your local stores. Another reason is that larger stores offer more than selling products. Larger stores can offer satisfaction like play areas for children or other areas that could make the customer relaxed. Additionally, larger stores may have more effective marketing strategies that encourage customers to make purchases rather than just browsing.. 
 
 
-That's all about the question no.1 in Store Characteristics. Let's now move into second question, which is: *Which stores have the highest efficiency (sales per square foot)?*
+That covers the first question in Store Characteristics. Let's now move on to the second question: ***Which stores have the highest efficiency (sales per square foot)?***
 
-In this part I've decided to use pivot table to easily filter out and create a chart. I've created a simple table to put there the values of Store ID and the Efficiency of said store. But to be able to answer this question, I needed to create another column to my dataset, named *"Efficiency of (Sales per Square Foot)"*. This column will show the efficiency of each store efficiency by sales per square foot. To make this happen I've converted the yard square first into square foot, to get the expected answer by the question. So to convert it, you just simply multiply the yard square to 9. 
+For this part, I decided to use a pivot table to easily filter and create a chart. I created a simple table to include Store ID and the efficiency of each store. To be able to answer this question, I needed to create another column to my dataset, called ***"Efficiency of (Sales per Square Foot)"***. This column calculates the efficiency of each store based on sales per square foot. To do this, I first converted the square yards to square feet by multiplying the yard square value by 9.
 
 Here is the formula:
 ```
 [Store_Area]]*9
 ```
 
-Then to find the efficiency, I've divided the store sales to the square foot of store area. Here is the formula:
+To find the efficiency, I divided the store sales by the square footage of the store area. Here is the formula:
 ```
 =[@[Store_Sales]]/([@[Store_Area]]*9)
 ```
-Now that we have the new column made, we can now insert a pivot table. In the pivot table I will select the Store ID as rows and Efficiency of (Sales per Square Foot) as the values. Then I filtered the Efficiency of (Sales per Square Foot) by largest to smallest. Then I've filtered the Store ID into only top 10 because 897 rows is too many.
+Now that we have the new column, we can now insert a pivot table. In the pivot table, I selected the Store ID as rows and Efficiency of (Sales per Square Foot) as the values. Then I filtered the Efficiency of (Sales per Square Foot) by largest to smallest. Finally, I filtered the Store ID to show only top 10 because 897 rows would be too many.
 
 <p align="center">
   <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/c6f84fe64d3687e855e02d23de6e0b21bd193f04/images/Question%203/Store_Characteristics_2.1.PNG" alt="Store Characteristics #2.1" width="800"
 </p>
 
-Here is now the pivot table. After that I've inserted a pivot chart, specifically a clustered column chart to visualize the result.
+Here is now the pivot table. After that, I've inserted a pivot chart, specifically a clustered column chart to visualize the results.
 
 <p align="center">
   <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/c6f84fe64d3687e855e02d23de6e0b21bd193f04/images/Question%203/Store_Characteristics_2.PNG" alt="Store Characteristics #2" width="800"
 </p>
 
-As you can see here, the highest efficiency is $10.70 USD and the lowest efficiency is at $1.23 USD. Which means the Store ID 557 is earning $10.70 USD per square foot in the store space. This could be a result of effective store layout. The products could be placed perfectly where the customer will be able to see it as quickly as possible. Not giving the customer a hard time finding the product he or she needs. Another possibility is that there is a lot of customer going inside the store. Maximizing the store area. Another reason could be, it has a great marketing strategy into promoting the products inside. It could be also because of the great customer service inside the store.
+As you can see, the highest efficiency is $10.70 USD and the lowest efficiency is at $1.23 USD. This means the Store ID 557 is earning $10.70 USD per square foot of store space. This could be a result of effective store layout, where the products are strategically placed to be easily visible to customers, helping them find what they need quickly. Not giving the customer a hard time finding the product he or she needs. Another possibility is that the store attracts a high volume of customers, thus maximizing the use of the store area. Another reason could be, it has a great marketing strategy in promoting the products inside. It could be also because of the excellent customer service inside the store.
 
 
 So those are the analysis answer for the third set of questions. Let's now move to the fourth set of questions.
