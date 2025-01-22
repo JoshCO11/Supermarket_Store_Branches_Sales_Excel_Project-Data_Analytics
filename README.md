@@ -49,8 +49,8 @@ The dataset also has a total number of 897 rows.
 
 
 ### **SOLVING THE *PERFORMANCE ANALYSIS* QUESTIONS**
-The first question is: *Which store generates the highest and lowest sales?*<br>
-The second question is: *What is the average store sales across all stores?*<br>
+The first question is: ***Which store generates the highest and lowest sales?***<br>
+The second question is: ***What is the average store sales across all stores?***<br>
 For this *Performance Analysis* questions, I made a table with three columns and rows.<br>
 - Column 1 is Metric (Highest Sales, Lowest Sales, Average Store Sales)<br>
 - Column 2 is Store ID (To identify which store holds the highest or lowest sales.)
@@ -92,11 +92,11 @@ Let's now move into the second set of questions.
 
 
 ### **SOLVING THE *CUSTOMER BEHAVIOR* QUESTIONS**
-The first question is: *Is there a correlation between daily customer count and store sales?*
+The first question is: ***Is there a correlation between daily customer count and store sales?***
 
-In this part I need to know if there are relationships between the two feature. So I've used the correlation formula in Excel. Then I've also used the data analysis toolpak to gather more information about the two feature relationship. After that I also created a scatter plot to visualize the relationship.
+In this part, I needed to determine if there is a relationship between the two features. So I used the correlation formula in Excel. I've also used the Data Analysis Toolpak to gather more information about the relationship between the two features. Additionally, I created a scatter plot to visualize the relationship.
 
-The formula in finding correlation in Excel is:
+The formula for finding correlation in Excel is:
 ```
 =CORREL(Table1[Daily_Customer_Count], Table1[Store_Sales])
 ```
@@ -105,30 +105,30 @@ To further understand the relationship here is the regression analysis:
   <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/e20ff4e5ee8b5f0bfde5dc41fa409b6bf68c2d17/images/Question%202/Customer_Behavior_Corr1.1.PNG" alt=" Customer Behavior #1.1" width="800"
 </p>
 
-What's important to understand in this confusing set of numbers is the Multiple R, R Square, Significance F, Coefficients, and P-value. You can access this using Data Analysis Toolpak in Excel. 
+What's important to understand in this complex set of numbers are the Multiple R, R Square, Significance F, Coefficients, Intercept, X-Variable, and P-value. These can accessed using Data Analysis Toolpak in Excel. 
 
-- **Multiple R** is just the same as the =CORR formula in Excel.
+- **Multiple R** is just the same as the ***=CORR*** formula in Excel.
 - **R Sqaure** is the proportion of the variance in the dependent variable that is predictable from the independent variables, also known as the coefficient of determination.
 - **Significance F** is the overall significance of the independent variable to dependent variable. If the result is below 0.05 that means its a good model.
 - **Coefficients** is the estimated values of the regression equation that quantify the relationship between each independent variable and the dependent variable.
 - **Intercept** is the representation predicted value of the dependent variable when all independent variables are equal to zero.
-- **P-value** When the value is less than 0.05 that means the coefficient is working and you should disregard the null hypothesis.
+- **P-value** When the value is less than ***0.05*** that means the coefficient is working and you should disregard the null hypothesis.
 - **X Variable** is the independent variable. You can put the name of the column here when you included the label header in your list.
 
-Well as you can see in this image the Multiple R is low that conveys low relationship between the two. The Significance F is about *.80* meaning it is not working well. Then for P-value the intercept value is less than 0.05 which means it is good while the variable is much higher also almost *.80* indicating no relationship, proving the null hypothesis.
+As you can see in this image, the Multiple R is low, conveying low relationship between the two variables. The Significance F is about ***.80***, meaning it is not working well. Then for P-value the intercept value is less than ***0.05***, which means it is good. While the X Variable is much higher also almost at ***.80*** indicating no relationship, supporting the null hypothesis.
 
-Some people understand it more when it is presented visually, so here is the scatter plot:
+Some people understand it better when presented visually, so here is the scatter plot:
 <p align="center">
   <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/e20ff4e5ee8b5f0bfde5dc41fa409b6bf68c2d17/images/Question%202/Customer_Behavior_Corr1.PNG" alt=" Customer Behavior #1" width="800"
 </p>
 
-The almost flat trendline means there is no correlation between the Daily Customer Count and Store Sales. Probably that is because the people going in-and-out the store doesn't buy and only goes for window shopping. Also maybe the store is probably themed like store that is for seasonal events, like christmas season, halloween, etc. where people doesn't neccesarily buy items that can be used in normal days.
+The almost flat trendline indicates that there is no correlation between the Daily Customer Count and Store Sales. Probably that is because the people entering and exiting the store may not be making purchases, possibly they only goes inside for window shopping. Additionally, the store might be themed for seasonal events, such as Christmas, Halloween, etc., where customers doesn't necessarily buy items that can be used in regular days.
 
-Now let's take a look more analysis by answer the second question: *How does the number of items available affect the daily customer count or store sales?*
+Now, let's dive deeper into the analysis by answering the second question: ***How does the number of items available affect the daily customer count or store sales?***
 
-In this part I've also did the same process in the number one, the only difference is the feature used. 
+In this part, I followed the same process as in the first question, the only difference is the feature used. 
 
-I checked first the correlation between the number of items and daily customer count using the formula:
+First, I checked the correlation between the number of items and daily customer count using the formula:
 ```
 =CORREL(Table1[Items_Available], Table1[Daily_Customer_Count])
 ```
@@ -138,16 +138,16 @@ Here is the regression analysis:
   <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/e20ff4e5ee8b5f0bfde5dc41fa409b6bf68c2d17/images/Question%202/Customer_Behavior_Corr2.1.PNG" alt=" Customer Behavior #2.1" width="800"
 </p>
 
-It has low Multiple R suggesting no correlation. The significance f is again greater than 0.05. The intercept p-value is the only thing that beaten the null hypothesis because the independent variable has a *0.22* significance, greater than 0.05 which is needed to suggest good correlation.
+It shows low Multiple R, suggesting no correlation. The Significance F is again greater than ***0.05***. The intercept's p-value is the only factor that rejects the null hypothesis, as the independent variable has a significance of ***0.22***, greater than 0.05 and indicates a weak correlation.
 
 Here is the scatter plot visualization:
 <p align="center">
   <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/51193e1245b3cf39635aadf47e77a16a49f720a7/images/Question%202/Customer_Behavior_Corr_Problem2.1.PNG" alt=" Customer Behavior #2" width="800"
 </p>
 
-The low correlation relationship between the number of items available and daily customer count is not correlated because of the possibility of poor desicion making of the store owner into ordering stocks of items which is not really selling in that store location. That is because probably the customer is looking for something specific that cannot be found in that store. Another example also of seasonal stores which are not visited often when its not holiday. 
+The low correlation relationship between the number of items available and the daily customer count maybe due to poor desicion-making by the store owner in ordering stocks that doesn't sell well at that particular location. Customers might be looking for specific items that aren’t available in the store. Another example could be seasonal stores, which are not visited often outside of the holiday season.. 
 
-Here is for the correlation between the number of items and store sales.<br>
+Here is the correlation between the number of items and store sales.<br>
 Correlation using the formula:
 ```
 =CORREL(Table1[Items_Available], Table1[Daily_Customer_Count])
@@ -157,23 +157,23 @@ Here is the regression analysis:
   <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/51193e1245b3cf39635aadf47e77a16a49f720a7/images/Question%202/Customer_Behavior_Corr2.2.PNG" alt=" Customer Behavior #2.2" width="800"
 </p>
 
-It also has low Multiple R suggesting no correlation. However the significance f is under 0.05 suggesting good model. Also both intercept and independent value is under 0.05 showing that it is useful.
+It also shows low Multiple R, suggesting no correlation. However, the Significance F is under 0.05, suggesting a good model. Also, both intercept and independent value is under 0.05, showing that they are statistically significant.
 
 Here is the visual of scatter plot between number of items available and store sales:
 <p align="center">
   <img src="https://github.com/JoshCO11/Supermarket_Store_Branches_Sales_Excel_Project-Data_Analytics/blob/51193e1245b3cf39635aadf47e77a16a49f720a7/images/Question%202/Customer_Behavior_Corr_Problem2.2.PNG" alt=" Customer Behavior #2.2" width="800"
 </p>
 
-The visualization show a trendline that looks like there is somewhat a upward slope but very little, that is because of the positive significance f, which indicates good model. However, its also almost flat indicating low to no correlation between the two features. 
+The visualization shows a trendline with a slight upward slope, which is due to the positive Significance F, indicating a good model. However, it is also almost flat, indicating low to no correlation between the two features. 
 
-Does that mean the store is having poor performance because the items available is not showing high correlation to sales? The answer is no, that is because maybe the store is not relevant to people. Just like what I've mentioned earlier, probably the store is dedicated for seasonal events, and people don't often buy products in that store if its regular days. Another reason is the difference between of demand and supply. The people might not buy items because of the quality of the product, indicating there could be also wrong decision making of restocking tons of items instead of focusing to quality can result to this low correlation. Suggesting to avoid overstocking and monitor the store's selling products to avoid cost waste. 
+Does this mean the store is performing poorly because the number of items available shows little correlation with sales? The answer is no. This could be because the store may not be relevant to people around the area or customers on regular days. As I mentioned earlier, the store might be focused on seasonal events, and people don’t often purchase items outside those times. Another possible reason is a mismatch between demand and supply. Customers might not buy products due to their quality, suggesting that poor decision-making in restocking excessive quantities, rather than focusing on quality, could lead to low correlation. Highlighting to avoid overstocking and monitor the store's product performance to avoid wasted cost. 
 
 
-Now we're done with second set of questions, let's go with the third set of questions.
+Now that we've addressed the second set of questions, let's move on to the third set.
 
 ### **SOLVING THE *STORE CHARACTERISTICS* QUESTIONS**
 
-The first question is: *Does store area influence the daily customer count or store sales?*
+The first question is: ***Does store area influence the daily customer count or store sales?***
 
 On what I did here is that I also answered it by using the *=CORR* formula in Excel and then I've created a scatter plot with trendline to be able to understand it more visually.
 
