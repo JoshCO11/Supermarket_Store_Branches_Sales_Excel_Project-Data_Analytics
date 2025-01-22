@@ -413,7 +413,7 @@ What I've learned from the analysis? I can say that the independent variables of
 
 ### **CONCLUSION ABOUT THE PROJECT**  
 
-This is my first project about data analysis using Excel. The skills I've showcased is just a the surface level of what a real data analyst can do. But this will serve as my stepping stone to improve my analysis in the future. I would to hear your reactions and comments to my analysis, either bad or good will help a lot to my progress. I'm planning to upload more projects here about datas using SQL, Python, Excel, Power BI, and other data related tools. 
+This is my first project on data analysis using Excel. The skills I've showcased is just a the surface level of what a real data analyst can do, but this will serve as a stepping stone to improve my analytical skills in the future. I would appreciate hearing your reactions and comments on my analysis—whether positive or constructive criticism, both will help me progress. I also plan to upload more projects here related to data using SQL, Python, Excel, Power BI, and other data-related tools
 
 
 
